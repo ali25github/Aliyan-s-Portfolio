@@ -408,11 +408,8 @@ h2.landing-info-h2 {
     font-size: 75px;
   }
 }
-/* Remove mobile photo and ensure 3D character is always hidden on mobile */
+/* Remove mobile photo */
 @media only screen and (max-width: 768px) {
-  .character-model {
-    display: none !important;
-  }
 
   .landing-section,
   .landing-container {
@@ -528,27 +525,8 @@ h2.landing-info-h2 {
     display: none;
   }
 
-  /* Show mobile photo */
+  /* Hide mobile photo entirely as user requested 3D model */
   .mobile-photo {
-    display: block;
-    position: relative !important;
-    width: 100%;
-    max-width: 380px;
-    margin: 0 auto;
-    z-index: 1;
-    order: 2;
-    /* Second: Photo */
-    /* Add fade mask to bottom */
-    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-    pointer-events: none;
-    transform: none !important;
-  }
-
-  .mobile-photo img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 0 40px rgba(194, 164, 255, 0.4));
+    display: none !important;
   }
 }
