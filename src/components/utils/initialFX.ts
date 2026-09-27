@@ -1,7 +1,7 @@
 import { TextSplitter } from "../../utils/textSplitter";
 import gsap from "gsap";
 import { lenis } from "../Navbar";
-import { setAllTimeline } from "../../utils/GsapScroll";
+import { setAllTimeline } from "./GsapScroll";
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
