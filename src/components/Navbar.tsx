@@ -20,10 +20,12 @@ const Navbar = () => {
       wheelMultiplier: 1.7,
       touchMultiplier: 2,
       infinite: false,
+      syncTouch: true,
     });
 
     // Start paused
     lenis.stop();
+    lenis.on("scroll", ScrollTrigger.update);
 
     // Handle smooth scroll animation frame
     function raf(time: number) {
