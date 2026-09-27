@@ -61,10 +61,10 @@ export const config = {
         {
             id: 1,
             title: "WatanConnect",
-            category: "Full-Stack Web App",
+            category: "Web App",
             technologies: "Next.js, React.js, Express.js, PostgreSQL",
             image: "",
-            description: "A full-stack multi-role web platform covering remittance, employment, property, and facilitation services for Overseas Pakistanis.",
+            description: "A multi-role web platform covering remittance, employment, property, and facilitation services for Overseas Pakistanis.",
             link: "https://github.com/ali25github"
         },
         {
@@ -84,14 +84,14 @@ export const config = {
     },
     skills: {
         develop: {
-            title: "FRONTEND DEVELOPER",
+            title: "SKILLS I HAVE",
             description: "Building responsive & accessible web interfaces",
             details: "Developing modern web applications using React.js, Next.js, and TypeScript. Specializing in translating Figma designs into pixel-perfect components.",
             tools: ["React.js", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Bootstrap", "HTML5", "CSS3"]
         },
         design: {
-            title: "SOFTWARE ENGINEER",
-            description: "Problem solving & full-stack basics",
+            title: "PASSIONATE ABOUT",
+            description: "Continuous learning & new technologies",
             details: "Applying strong engineering fundamentals, integrating REST APIs, managing databases, and collaborating in Agile environments.",
             tools: ["Node.js", "Express.js", "PostgreSQL", "MongoDB", "Python", "Git", "GitHub", "Postman"]
         }
