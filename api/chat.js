@@ -1,4 +1,4 @@
-const MODEL = 'openai/gpt-oss-20b'; // Groq's fastest current model (900+ tokens/sec). Llama 3.1 8B / 3.3 70B are deprecated on Groq as of June 2026.
+const MODEL = 'gemini-1.5-flash';
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     }
 
     const { messages } = req.body || {};
-    const apiKey = process.env.GROQ_API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
         return res.status(500).json({ error: 'Server configuration error: Missing API Key' });
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        const response = await fetch('https://generativelanguage.googleapis.com/v1beta/openai/chat/completions', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${apiKey}`,
@@ -33,15 +33,15 @@ export default async function handler(req, res) {
         const data = await response.json();
 
         if (!response.ok) {
-            console.error('Groq API Error:', data);
+            console.error('Gemini API Error:', data);
             return res.status(response.status).json({
-                error: data?.error?.message || 'Failed to fetch from Groq'
+                error: data?.error?.message || 'Failed to fetch from Gemini'
             });
         }
 
         return res.status(200).json(data);
     } catch (error) {
-        console.error('Groq API Error:', error);
+        console.error('Gemini API Error:', error);
         return res.status(500).json({ error: 'Internal Server Error', details: error.message });
     }
 }
